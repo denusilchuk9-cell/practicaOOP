@@ -20,6 +20,20 @@ namespace RpgSimulator.Domain.Entities
             _strength = strength;
         }
 
+        public Player(string name, int strength, int level, int experience, int health, int maxHealth) : base(name, maxHealth)
+        {
+            if (strength < 1 || strength > 100)
+                throw new ArgumentException("Сила має бути 1-100");
+            if (level < 1)
+                throw new ArgumentException("Рівень має бути не менше 1");
+
+            _strength = strength;
+            _level = level;
+            _experience = experience;
+            MaxHealth = maxHealth;
+            Health = Math.Clamp(health, 0, maxHealth);
+        }
+
         public void AddExperience(int amount)
         {
             _experience += amount;

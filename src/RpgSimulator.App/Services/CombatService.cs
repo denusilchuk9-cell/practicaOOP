@@ -14,7 +14,7 @@ namespace RpgSimulator.App.Services
             _logger = logger;
         }
 
-        public void StartFight(Player player, Enemy enemy, IAttackStrategy strategy = null)
+        public void StartFight(Player player, Enemy enemy, IAttackStrategy? strategy = null)
         {
             strategy = strategy ?? new NormalAttackStrategy();
             _logger($"Бій: {player.Name} vs {enemy.Name}!");

@@ -13,6 +13,20 @@ namespace RpgSimulator.Domain.Patterns
         public void Execute(Player player, Enemy enemy) => player.Attack(enemy);
     }
 
+    public class SwordAttackStrategy : IAttackStrategy
+    {
+        private const int BonusDamage = 10;
+
+        public void Execute(Player player, Enemy enemy)
+        {
+            player.Attack(enemy);
+            if (enemy.IsAlive)
+            {
+                enemy.TakeDamage(BonusDamage);
+            }
+        }
+    }
+
     public class CriticalAttackStrategy : IAttackStrategy
     {
         private static readonly Random _random = new Random();

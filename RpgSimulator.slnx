@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="RpgSimulator.App/RpgSimulator.App.csproj" />
+  <Project Path="RpgSimulator.Console/RpgSimulator.Console.csproj" Id="4d4f48c1-b093-46fd-bea4-c5d3c8262ff1" />
+  <Project Path="RpgSimulator.Domain/RpgSimulator.Domain.csproj" />
+  <Project Path="RpgSimulator.Tests/RpgSimulator.Tests.csproj" />
+</Solution>
